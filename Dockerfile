@@ -12,7 +12,7 @@ USER root
 
 RUN apk update && apk upgrade
 RUN apk add --no-cache zlib-dev build-base libxml2-dev libxslt-dev readline-dev libffi-dev yaml-dev zlib-dev libffi-dev cmake
-RUN apk add --no-cache ruby ruby-dev ruby-irb ruby-rdoc 
+RUN apk add --no-cache ruby ruby-dev ruby-irb ruby-rdoc rsync
 RUN gem update --system && gem install jekyll
 
 # Update permissions on Ruby gems folder to allow builds to install new plugins
