@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    image: httpd:alpine
+    ports:
+    - "8081:80"
+    volumes:
+    - html-sites:/usr/local/apache2/htdocs:ro
+  jenkins:
+    image: jekyll-jenkins
+    ports:
+    - 8080:8080
+    - 5000:5000
+    volumes:
+    - html-sites:/mnt/html-sites
+volumes:
+  html-sites: {}
