@@ -19,5 +19,3 @@ RUN gem update --system && gem install jekyll
 RUN chown -R root:jenkins /usr/lib/ruby/gems && chmod 770 -R /usr/lib/ruby/gems
 
 USER jenkins
-
-VOLUME ["/var/jenkins_home"]

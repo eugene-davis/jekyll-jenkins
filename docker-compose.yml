@@ -7,11 +7,13 @@ services:
     volumes:
     - html-sites:/usr/local/apache2/htdocs:ro
   jenkins:
-    image: jekyll-jenkins
+    build: .
     ports:
     - 8080:8080
     - 5000:5000
     volumes:
     - html-sites:/mnt/html-sites
+    - jenkins-home:/var/jenkins_home
 volumes:
   html-sites: {}
+  jenkins-home: {}
