@@ -3,3 +3,4 @@ timestamper
 ws-cleanup
 blueocean
 htmlpublisher
+ pipeline-utility-steps
