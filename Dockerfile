@@ -15,6 +15,9 @@ RUN apk add --no-cache zlib-dev build-base libxml2-dev libxslt-dev readline-dev 
 RUN apk add --no-cache ruby ruby-dev ruby-irb ruby-rdoc rsync
 RUN gem update --system && gem install jekyll
 
+# Prep for html-sites volume
+RUN mkdir -p /mnt/html-sites && chown jenkins:jenkins -R /mnt/html-sites
+
 # Update permissions on Ruby gems folder to allow builds to install new plugins
 RUN chown -R root:jenkins /usr/lib/ruby/gems && chmod 770 -R /usr/lib/ruby/gems
 
